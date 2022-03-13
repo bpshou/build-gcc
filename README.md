@@ -9,3 +9,4 @@
 
 #### 参考文献
 `https://gcc.gnu.org/wiki/InstallingGCC`
+`https://solarianprogrammer.com/2016/10/07/building-gcc-ubuntu-linux`
