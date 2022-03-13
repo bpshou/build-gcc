@@ -40,6 +40,6 @@ jobs:
             --enable-bootstrap \
             --enable-shared \
             --enable-threads=posix
-          make -j
+          make -j4
           make install
 
