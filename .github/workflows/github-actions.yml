@@ -1,7 +1,7 @@
 name: github-actions
 on: [push]
 jobs:
-  build-nginx:
+  build-gcc:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -22,7 +22,7 @@ jobs:
       - name: Download package
         run: |
           sudo mkdir -p /data/src
-          curl -L https://bigsearcher.com/mirrors/gcc/releases/gcc-9.4.0/gcc-9.4.0.tar.gz -O
+          curl -L https://bigsearcher.com/mirrors/gcc/releases/gcc-9.4.0/gcc-9.4.0.tar.gz -o /data/src/
 
       - name: Compile Build
         run: |
