@@ -18,17 +18,17 @@ jobs:
             libmpfr-dev \
             libmpc-dev
           pwd
+          whoami
 
       - name: Download package
         run: |
-          sudo mkdir -p /data/src
-          sudo chmod -R 755 /data/src
-          curl -L https://bigsearcher.com/mirrors/gcc/releases/gcc-9.4.0/gcc-9.4.0.tar.gz -o /data/src/gcc-9.4.0.tar.gz
+          sudo mkdir -p /home/src
+          curl -L https://bigsearcher.com/mirrors/gcc/releases/gcc-9.4.0/gcc-9.4.0.tar.gz -o /home/src/gcc-9.4.0.tar.gz
 
       - name: Compile Build
         run: |
-          tar -zxvf /data/src/gcc-9.4.0.tar.gz -C /data/src
-          cd /data/src/gcc-9.4.0
+          tar -zxvf /home/src/gcc-9.4.0.tar.gz -C /home/src
+          cd /home/src/gcc-9.4.0
           ./contrib/download_prerequisites
           cd ..
           sudo mkdir -p gcc
