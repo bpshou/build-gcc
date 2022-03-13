@@ -23,17 +23,23 @@ jobs:
       - name: Download package
         run: |
           sudo mkdir -p /home/src
-          curl -L https://bigsearcher.com/mirrors/gcc/releases/gcc-9.4.0/gcc-9.4.0.tar.gz -o /home/src/gcc-9.4.0.tar.gz
+          curl -L http://ftp.gnu.org/gnu/gcc/gcc-9.2.0/gcc-9.2.0.tar.gz -o /home/src/gcc-9.2.0.tar.gz
 
       - name: Compile Build
         run: |
-          tar -zxvf /home/src/gcc-9.4.0.tar.gz -C /home/src
-          cd /home/src/gcc-9.4.0
+          tar -zxvf /home/src/gcc-9.2.0.tar.gz -C /home/src
+          cd /home/src/gcc-9.2.0
           ./contrib/download_prerequisites
           cd ..
           sudo mkdir -p gcc
           cd gcc
-          $PWD/../gcc-9.4.0/configure --prefix=$HOME/gcc-9.4.0 --enable-languages=c,c++,fortran,go
-          make
+          $PWD/../gcc-9.2.0/configure \
+            --prefix=$HOME/gcc-9.2.0 \
+            --enable-languages=c,c++,fortran,go \
+            --disable-multilib \
+            --enable-bootstrap \
+            --enable-shared \
+            --enable-threads=posix
+          make -j
           make install
 

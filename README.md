@@ -4,6 +4,7 @@
 `https://gcc.gnu.org`
 
 #### 镜像地址
+`http://ftp.gnu.org/gnu/gcc/gcc-9.2.0/gcc-9.2.0.tar.gz`
 `https://bigsearcher.com/mirrors/gcc/releases`
 
 #### 参考文献
